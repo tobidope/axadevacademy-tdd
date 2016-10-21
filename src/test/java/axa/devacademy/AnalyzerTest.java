@@ -172,6 +172,7 @@ public class AnalyzerTest {
 	@Test
 	public void gridIsFullAndNoWinner() throws ColumnOverflowException {
 		this.grid = createDrawGrid();
+		this.analyzer = new Analyzer(grid);
 		assertTrue(analyzer.isDraw());
 	}
 
