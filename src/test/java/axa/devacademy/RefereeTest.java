@@ -77,5 +77,14 @@ public class RefereeTest {
 		assertFalse(referee.hasGameFinished());
 	}
 	
+	@Test
+	public void testWithAnalyzerStub_redPlayerWinsOnEmptyGrid() {
+		StubAnalyzer a = new StubAnalyzer();
+		a.setHasPlayerWon(true);
+		this.referee = new Referee(a);
+		assertEquals(Player.RED, this.referee.someoneHasWon());
+	}
+	
+	
 	
 }

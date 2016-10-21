@@ -4,8 +4,15 @@ public class Referee {
 
 	private Grid grid;
 	private Player nextPlayer = Player.YELLOW;
-	private Analyzer analyzer;
+	private AnalyzerInterface analyzer;
 
+	
+	public Referee() {}
+	
+	public Referee(AnalyzerInterface analyzer){
+		this.analyzer = analyzer;
+	}
+	
 	public Player getNextPlayer() {
 		return this.nextPlayer;
 	}

@@ -8,7 +8,7 @@ import org.junit.Test;
 public class AnalyzerTest {
 
 	Grid grid;
-	Analyzer analyzer;
+	AnalyzerInterface analyzer;
 
 	@Before
 	public void setUp() {
