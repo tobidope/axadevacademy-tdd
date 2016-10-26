@@ -11,18 +11,20 @@ public class Analyzer implements AnalyzerInterface {
 		this.grid = grid;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see axa.devacademy.AnalyzerInterface#hasPlayerWon()
 	 */
 	@Override
 	public boolean hasPlayerWon() {
-		
+
 		return hasWonOnARow() || hasWonOnAColumn() || hasWonOnARightDiagonal() || hasWonOnALeftDiagonal();
 	}
 
 	private boolean hasWonOnALeftDiagonal() {
 		for (int row = 0; row < DISTANCE_TO_EDGE; row++) {
-			for (int column = Grid.NUMBER_OF_COLUMNS-1; column >= DISTANCE_TO_EDGE; column--) {
+			for (int column = Grid.NUMBER_OF_COLUMNS - 1; column >= DISTANCE_TO_EDGE; column--) {
 				if (isCellEmpty(row, column))
 					continue;
 				if (fourInADiagonal(row, column, DIRECTION_LEFT))
@@ -91,14 +93,16 @@ public class Analyzer implements AnalyzerInterface {
 		return grid.getCell(column, row) == TokenType.EMPTY;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see axa.devacademy.AnalyzerInterface#isDraw()
 	 */
 	@Override
 	public boolean isDraw() {
 		boolean isAllFilled = true;
 		for (int column = 0; column < Grid.NUMBER_OF_COLUMNS; column++) {
-			for (int row = 0; row < Grid.NUMBER_OF_ROWS; row++) 
+			for (int row = 0; row < Grid.NUMBER_OF_ROWS; row++)
 				if (isCellEmpty(row, column)) {
 					isAllFilled = false;
 					break;
